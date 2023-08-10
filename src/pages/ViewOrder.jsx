@@ -118,6 +118,7 @@ const ViewOrder = () => {
 
           {
             order.orderItems.map((item , index)=>{
+              console.log(item)
              return <ListItem ripple={false} className="hover:bg-none cursor-default flex items-center justify-between px-20">
           <div className='flex justify-center items-center'>
           <ListItemPrefix>
@@ -125,7 +126,7 @@ const ViewOrder = () => {
           </ListItemPrefix>
           <div>
             <Typography variant="h6" color="blue-gray" className="hover:underline">
-              <Link to = {`/product/${item._id}`}>
+              <Link to = {`/product/${item.product}`}>
                 {item.name}
               </Link>
             </Typography>
