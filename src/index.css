@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.theme-text-1{
+  color: #0C63E7;
+}
+.theme-text-2{
+  color: #ff7e33;
+}
+.theme-primary{
+  background-color: #9333EA;
+}
+.theme-secondary{
+  background-color: #ff7e33;
+}
+.theme-main{
+  background-color: #0f172a;
+}
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+  }
+  
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
+  }
+  
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+  }
+  .btn-16:hover {
+    box-shadow: rgba(255,255,255, 1) -1px -1px,  -2px -2px, rgba(255,255,255, 1) -3px -3px, rgba(255,255,255, .9) -4px -4px,
+      rgba(255,255,255,.8) -5px -5px, rgba(255,255,255,.7) -6px -6px, rgba(255,255,255,.6) -7px -7px, rgba(255,255,255,.5) -8px -8px,
+         rgba(255,255,255,.4) -9px -9px, rgba(255,255,255,.3) -10px -10px, rgba(255,255,255,.2) -11px -11px, rgba(255,255,255,.1) -12px -12px;
+   }
+   .btn-16:hover:after {
+     left: auto;
+     right: 0;
+     width: 100%;
+   }
+   .btn-16:active {
+     top: 2px;
+   }
+   .btn-16:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+  }
+  /* For webkit-based browsers (Chrome, Safari) */
+  /* Hide the scrollbar track */
+  body::-webkit-scrollbar {
+    width: 6px !important; /* Set the width of the scrollbar */
+    background-color: whitesmoke !important; /* Set the background color of the scrollbar track to transparent */
+  }
+  
+  /* Customize the scrollbar thumb */
+  body::-webkit-scrollbar-thumb {
+    background-color: transparent !important; /* Set the color of the scrollbar thumb */
+    border-radius: 3px !important; /* Add rounded corners to the scrollbar thumb */
+  }
+  
+  /* For other browsers (Firefox) */
+  /* Hide the scrollbar track */
+  body {
+    scrollbar-width: thin !important;
+  }
+  
+  /* Customize the scrollbar thumb */
+  body::-webkit-scrollbar-thumb {
+    background-color: transparent !important;
+    border-radius: 3px !important;
+  }
+  /* Assuming your navbar has a fixed height, replace 'navbar-height' with its actual height in pixels */
+  /* Add any other styles for your content div */
+
+  .spinner {
+    width: 70.4px;
+    height: 70.4px;
+    --clr: rgb(247, 197, 159);
+    --clr-alpha: rgb(247, 197, 159,.1);
+    animation: spinner 1.6s infinite ease;
+    transform-style: preserve-3d;
+  }
+  
+  .spinner > div {
+    background-color: var(--clr-alpha);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 3.5px solid var(--clr);
+  }
+  
+  .spinner div:nth-of-type(1) {
+    transform: translateZ(-35.2px) rotateY(180deg);
+  }
+  
+  .spinner div:nth-of-type(2) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+  }
+  
+  .spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+  }
+  
+  .spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center;
+  }
+  
+  .spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center;
+  }
+  
+  .spinner div:nth-of-type(6) {
+    transform: translateZ(35.2px);
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+    }
+  
+    50% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+    }
+  
+    100% {
+      transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+    }
+  }
