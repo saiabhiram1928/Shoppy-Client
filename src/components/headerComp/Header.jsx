@@ -36,7 +36,7 @@ import {toast} from 'react-toastify';
     try {
       await logoutApiCall({token : userInfo.token}).unwrap()
       dispatch(logout())
-      window.location.pathname = '/login'
+      window.location.pathname = '/'
     } catch (error) {
       toast.error(error?.data?.message || error.error)
     }
@@ -196,12 +196,12 @@ else navigate('/')
                 My Profile
               </Link>
             </Typography> 
-            <Button color="white" className="p-3 bg-none  w-1/2 mr-1 border-2 z-10 hover:text-blue rounded-lg font-normal link link-underline link-underline-black text-blue-600 shadow-lg shadow-cyan-500/50">
+            <Button onClick={handleLogout} color="white" className="p-3 bg-none  w-1/2 mr-1 border-2 z-10 hover:text-blue rounded-lg font-normal link link-underline link-underline-black text-blue-600 shadow-lg shadow-cyan-500/50">
               Logout
             </Button>
             </div>
           ) : (
-            <Button variant="gradient" size="sm" fullWidth className="mb-2">
+            <Button onClick={()=> navigate('/login')} variant="gradient" size="sm" fullWidth className="mb-2">
               <span>Login</span>
             </Button>
           )}
